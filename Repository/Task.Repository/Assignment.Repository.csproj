@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A8F6E4A-1BC0-4749-84DB-A814E6665EB9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Task.Repository</RootNamespace>
+    <AssemblyName>Task.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataModel\AssignmentDbContext.cs" />
+    <Compile Include="Migrations\201612072015259_Intial.cs" />
+    <Compile Include="Migrations\201612072015259_Intial.Designer.cs">
+      <DependentUpon>201612072015259_Intial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612072036455_Order.cs" />
+    <Compile Include="Migrations\201612072036455_Order.Designer.cs">
+      <DependentUpon>201612072036455_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612072137457_Test.cs" />
+    <Compile Include="Migrations\201612072137457_Test.Designer.cs">
+      <DependentUpon>201612072137457_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612081820539_Assignment.cs" />
+    <Compile Include="Migrations\201612081820539_Assignment.Designer.cs">
+      <DependentUpon>201612081820539_Assignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612110042084_User.cs" />
+    <Compile Include="Migrations\201612110042084_User.Designer.cs">
+      <DependentUpon>201612110042084_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612112233236_Reassign.cs" />
+    <Compile Include="Migrations\201612112233236_Reassign.Designer.cs">
+      <DependentUpon>201612112233236_Reassign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612131622159_Dateofcompletion.cs" />
+    <Compile Include="Migrations\201612131622159_Dateofcompletion.Designer.cs">
+      <DependentUpon>201612131622159_Dateofcompletion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612131659017_Request.cs" />
+    <Compile Include="Migrations\201612131659017_Request.Designer.cs">
+      <DependentUpon>201612131659017_Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612190522367_updateOrder.cs" />
+    <Compile Include="Migrations\201612190522367_updateOrder.Designer.cs">
+      <DependentUpon>201612190522367_updateOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612191846015_updateOrderEnum.cs" />
+    <Compile Include="Migrations\201612191846015_updateOrderEnum.Designer.cs">
+      <DependentUpon>201612191846015_updateOrderEnum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612290505009_OrderProducts.cs" />
+    <Compile Include="Migrations\201612290505009_OrderProducts.Designer.cs">
+      <DependentUpon>201612290505009_OrderProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612290509351_OrderReinstated.cs" />
+    <Compile Include="Migrations\201612290509351_OrderReinstated.Designer.cs">
+      <DependentUpon>201612290509351_OrderReinstated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612290512045_OrderRole.cs" />
+    <Compile Include="Migrations\201612290512045_OrderRole.Designer.cs">
+      <DependentUpon>201612290512045_OrderRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612292106572_OrderSummaryDelete.cs" />
+    <Compile Include="Migrations\201612292106572_OrderSummaryDelete.Designer.cs">
+      <DependentUpon>201612292106572_OrderSummaryDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612292202519_OrderSummaryUpdate.cs" />
+    <Compile Include="Migrations\201612292202519_OrderSummaryUpdate.Designer.cs">
+      <DependentUpon>201612292202519_OrderSummaryUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701021755592_StatusUpdated.cs" />
+    <Compile Include="Migrations\201701021755592_StatusUpdated.Designer.cs">
+      <DependentUpon>201701021755592_StatusUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701022310031_AssignmentStatus.cs" />
+    <Compile Include="Migrations\201701022310031_AssignmentStatus.Designer.cs">
+      <DependentUpon>201701022310031_AssignmentStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701042045346_ReassigGone.cs" />
+    <Compile Include="Migrations\201701042045346_ReassigGone.Designer.cs">
+      <DependentUpon>201701042045346_ReassigGone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701042051023_Addrequests.cs" />
+    <Compile Include="Migrations\201701042051023_Addrequests.Designer.cs">
+      <DependentUpon>201701042051023_Addrequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701060158207_Notification.cs" />
+    <Compile Include="Migrations\201701060158207_Notification.Designer.cs">
+      <DependentUpon>201701060158207_Notification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Enums\Roles.cs" />
+    <Compile Include="Models\Enums\Status.cs" />
+    <Compile Include="Models\Enums\TimeOfDay.cs" />
+    <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Assignment.cs" />
+    <Compile Include="Models\OrderProduct.cs" />
+    <Compile Include="Models\OrderSummary.cs" />
+    <Compile Include="Models\UserAssignment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612072015259_Intial.resx">
+      <DependentUpon>201612072015259_Intial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612072036455_Order.resx">
+      <DependentUpon>201612072036455_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612072137457_Test.resx">
+      <DependentUpon>201612072137457_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612081820539_Assignment.resx">
+      <DependentUpon>201612081820539_Assignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612110042084_User.resx">
+      <DependentUpon>201612110042084_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612112233236_Reassign.resx">
+      <DependentUpon>201612112233236_Reassign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612131622159_Dateofcompletion.resx">
+      <DependentUpon>201612131622159_Dateofcompletion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612131659017_Request.resx">
+      <DependentUpon>201612131659017_Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612190522367_updateOrder.resx">
+      <DependentUpon>201612190522367_updateOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612191846015_updateOrderEnum.resx">
+      <DependentUpon>201612191846015_updateOrderEnum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612290505009_OrderProducts.resx">
+      <DependentUpon>201612290505009_OrderProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612290509351_OrderReinstated.resx">
+      <DependentUpon>201612290509351_OrderReinstated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612290512045_OrderRole.resx">
+      <DependentUpon>201612290512045_OrderRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612292106572_OrderSummaryDelete.resx">
+      <DependentUpon>201612292106572_OrderSummaryDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612292202519_OrderSummaryUpdate.resx">
+      <DependentUpon>201612292202519_OrderSummaryUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701021755592_StatusUpdated.resx">
+      <DependentUpon>201701021755592_StatusUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701022310031_AssignmentStatus.resx">
+      <DependentUpon>201701022310031_AssignmentStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701042045346_ReassigGone.resx">
+      <DependentUpon>201701042045346_ReassigGone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701042051023_Addrequests.resx">
+      <DependentUpon>201701042051023_Addrequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701060158207_Notification.resx">
+      <DependentUpon>201701060158207_Notification.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\User.Repository\User.Repository.csproj">
+      <Project>{FE66819A-D6A7-4755-8FEC-2EA19E9F5DBD}</Project>
+      <Name>User.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
