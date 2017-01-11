@@ -1,0 +1,95 @@
+﻿@model IEnumerable<CompleteTaskViewModel>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <a asp-action="CreateTask" asp-controller="Assignment" class="fa fa-tasks fa-3x clickable"></a>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <h3>In Queue...</h3>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="panel-body">
+                <div class="list-group">
+                    @foreach (var item in Model.OrderBy(m => m.UserAssignment.DateOfAssignment))
+                    {
+                        if (item.Assignment.Status == Status.Completed)
+                        {
+                            <a asp-action="Tracker" asp-controller="Assignment" asp-route-id="@item.Assignment.AssignmentId" class="list-group-item list-group-item-success">
+                                <h4 class="list-group-item-heading">
+                                    @item.Assignment.Name <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                                    <span class="pull-right">Completed on: @item.UserAssignment.DateOfCompletion.ToLongDateString()</span>
+                                </h4>
+                                <p class="list-group-item-text">
+                                    Response: @item.UserAssignment.Response
+                                </p>
+                            </a>
+
+                        }
+                        if (item.Assignment.Status == Status.Rejected)
+                        {
+                            <a asp-action="Tracker" asp-controller="Assignment" asp-route-id="@item.Assignment.AssignmentId" class="list-group-item list-group-item-danger">
+                                <h4 class="list-group-item-heading">
+                                    @item.Assignment.Name <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                                    <span class="pull-right">Completed on: @item.UserAssignment.DateOfCompletion.ToLongDateString()</span>
+                                </h4>
+                                <p class="list-group-item-text">
+                                    Response: @item.UserAssignment.Response
+                                </p>
+                            </a>
+
+                        }
+                        if (item.Assignment.Status == Status.Cancelled)
+                        {
+                            <a asp-action="Tracker" asp-controller="Assignment" asp-route-id="@item.Assignment.AssignmentId" class="list-group-item list-group-item-warning">
+                                <h4 class="list-group-item-heading">
+                                    @item.Assignment.Name <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                                    <span class="pull-right">Cancelled on: @item.UserAssignment.DateOfCompletion.ToLongDateString()</span>
+                                </h4>
+                                <p class="list-group-item-text">
+                                    Response: @item.UserAssignment.Response
+                                </p>
+                            </a>
+
+                        }
+                        if (item.Assignment.Status == Status.Circulating)
+                        {
+                            <a asp-action="Tracker" asp-controller="Assignment" asp-route-id="@item.Assignment.AssignmentId" class="list-group-item">
+                                <h4 class="list-group-item-heading">
+                                    @item.Assignment.Name
+                                    <span class="pull-right">Created on: @item.UserAssignment.DateOfAssignment.ToLongDateString()</span>
+                                </h4>
+                                <p class="list-group-item-text">
+                                    Requests: @item.Assignment.Requests
+                                </p>
+                            </a>
+
+                        }
+                        if (item.Assignment.Status == Status.Created)
+                        {
+                            <a asp-action="Tracker" asp-controller="Assignment" asp-route-id="@item.Assignment.AssignmentId" class="list-group-item">
+                                <h4 class="list-group-item-heading">
+                                    @item.Assignment.Name
+                                    <span class="pull-right">Created on: @item.UserAssignment.DateOfAssignment.ToLongDateString()</span>
+                                </h4>
+                                <p class="list-group-item-text">
+                                    Requests: @item.Assignment.Requests
+                                </p>
+                            </a>
+
+                        }
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

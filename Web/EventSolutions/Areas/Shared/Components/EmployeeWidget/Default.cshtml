@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Employee>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="panel-title">
+                    <h4>Employee Roles</h4>
+                </div>
+            </div>
+
+            @*<div class="pull-right side">
+                <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                    <i class="fa fa-filter fa-2x" aria-hidden="true"></i>
+                </span>
+            </div>*@
+        </div>
+    </div>
+    @*<div class="panel-body">
+        <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Orders" />
+    </div>*@
+
+    <table class="table clickable table-hover table-bordered table-striped" id="dev-table">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Role
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.FirstName @item.LastName
+                    </td>
+                    <td>
+                        @item.Role
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

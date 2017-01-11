@@ -1,0 +1,63 @@
+﻿@model EventSolutions.ViewModels.UserViewModel
+
+<div class="main-container">
+
+    <div class="row"></div>
+
+    <div class="module form-module">
+        <div class="toggle">
+            <i class="fa fa-times fa-pencil"></i>
+            <div class="tooltip">Click Me</div>
+        </div>
+
+        <div class="form">
+            <h2>Login to your account</h2>
+            <form method="post" asp-controller="Home" asp-action="SignIn">
+                <div>
+                    <span asp-validation-for="@Model.UserName" autofocus style="color:aliceblue" />
+                </div>
+
+
+                <input type="text" asp-for="UserName" placeholder="Username" />
+
+                <div>
+                    <span asp-validation-for="@Model.Password" style="color:aliceblue" />
+                </div>
+                <input type="password" asp-for="Password" placeholder="Password" />
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="form">
+            <h2>Create an account</h2>
+            <form method="post" asp-controller="Home" asp-action="Register">
+                    <div>
+                        <span asp-validation-for="@Model.UserName" style="color:aliceblue" />
+                    </div>
+                    <input type="text" asp-for="UserName" placeholder="Username" />
+                    <div>
+                        <span asp-validation-for="@Model.Password" style="color:aliceblue" />
+                    </div>
+                    <input type="password" asp-for="Password" placeholder="Password" />
+                    <div>
+                        <span asp-validation-for="@Model.FirstName" style="color:aliceblue" />
+                    </div>
+                    <input type="text" asp-for="FirstName" placeholder="FirstName" />
+                    <div>
+                        <span asp-validation-for="@Model.LastName" style="color:aliceblue" />
+                    </div>
+                    <input type="text" asp-for="LastName" placeholder="LastName" />
+                    <div>
+                        <span asp-validation-for="@Model.Email" style="color:aliceblue" />
+                    </div>
+                    <input type="email" asp-for="Email" placeholder="Email Address" />
+
+                    <button type="submit">Register</button>
+</form>
+        </div>
+        <div class="cta">Forgot your password? To Bad...</div>
+    </div>
+
+</div>
+
+@*@await Component.InvokeAsync("Footer")*@
+

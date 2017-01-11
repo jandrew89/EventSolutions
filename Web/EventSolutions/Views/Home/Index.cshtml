@@ -1,0 +1,19 @@
+﻿<div style="padding-top:5em;padding-left:2em;">
+
+        <div class="col-md-3">
+            @Html.Partial("_Navigation")
+
+        </div>
+        <div class="col-md-6">
+            @await Component.InvokeAsync("AssignmentWidget")
+        </div>
+        <div class="col-md-3">
+            @await Component.InvokeAsync("EmployeeWidget")
+        </div>
+        <div class="col-md-3">
+            @await Component.InvokeAsync("EmployeeWidget")
+        </div>
+    </div>
+<div class="row">
+    
+</div>

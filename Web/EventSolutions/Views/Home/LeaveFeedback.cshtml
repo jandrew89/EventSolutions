@@ -1,0 +1,52 @@
+﻿@model EventSolutions.ViewModels.FeedBackViewModel
+
+<div class="main-container">
+    <div class="container" style="height:100%">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center" style="padding-top: 8em;">
+                <h2 class="lpLower" style="color:black">Get In Touch</h2>
+                <p style="color:black">We love feedback. Fill out the form below and we'll get back to you as soon as possible.</p>
+                <hr class="primary" />
+
+            </div>
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <form class="contact-form row" asp-action="LeaveFeedback" method="post">
+                    <div class="col-md-4">
+                        <label></label>
+                        <input asp-for="@Model.FullName" class="form-control" autofocus placeholder="Name" />
+                        <span asp-validation-for="@Model.FullName" style="color:aliceblue" />
+                    </div>
+                    <div class="col-md-4">
+                        <label></label>
+                        <input asp-for="@Model.Email" class="form-control" placeholder="Email" />
+                        <span asp-validation-for="@Model.Email" style="color:aliceblue" />
+                    </div>
+                    <div class="col-md-4">
+                        <label></label>
+                        <input asp-for="@Model.Phone" class="form-control" placeholder="Phone" />
+                    </div>
+                    @*<div class="col-md-4">
+                        <label></label>
+                        <input class="form-control" placeholder="Name" />
+                    </div>*@
+                    <div class="col-md-12">
+                        <label></label>
+                        <label></label>
+                        
+                        <textarea class="form-control" rows="9" asp-for="@Model.Message" placeholder="Your Message Here..."></textarea>
+                        <span asp-validation-for="@Model.Message" style="color:aliceblue" />
+                    </div>
+                    <div class="col-md-offset-2 col-md-4" style="padding-top:1em">
+                        <label></label>
+                        <button type="submit" class="btn btn-info btn-block btn-lg col-md-2">Send Email<i class="ion-android-arrow-forward"></i></button>
+                        
+                    </div>
+                    <div class="col-md-4" style="padding-top:1em">
+                        <button type="submit" class="btn btn-info btn-block btn-lg col-md-2">Send Text Message<i class="ion-android-arrow-forward"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@*@await Component.InvokeAsync("Footer")*@

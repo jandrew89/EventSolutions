@@ -1,0 +1,19 @@
+﻿@model AssignmentViewModel
+
+<div class="black-modal-header" style="border-radius: 0px !important;">
+    <button type="button" class="close" data-dismiss="modal">
+        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+    </button>
+
+    <h4 class="black-modal-title" id="myModelLabel">Completed</h4>
+
+</div>
+ <div class="black-modal-body" style="border-radius: 0px !important;">
+     <form method="post" asp-action="Complete" asp-controller="Assignment">
+         <div class="form-group">
+             <label class="sr-only"></label>
+             <textarea type="text" asp-for="@Model.Comments" class="black-form-control" autofocus placeholder="Additional comments...." />
+         </div>
+         <button type="submit" class="btn" asp-for="@Model.Assignment.AssignmentId">Complete</button>
+     </form>
+</div>

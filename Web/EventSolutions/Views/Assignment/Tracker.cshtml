@@ -1,0 +1,97 @@
+﻿@model IEnumerable<CompleteTaskViewModel>
+
+<div class="container-fluid" style="padding-top:3em;padding-left:3em">
+    <div id="completeModal" class="modal fade in">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="completeModalContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2" style="padding-top:2em">
+            @Html.Partial("_Navigation")
+        </div>
+        <div class="col-md-10">
+            <div>
+                <div>
+                    @foreach (var item in Model.DistintBy(item => item.Assignment.AssignmentId))
+                    {
+                        <h2>@item.Assignment.Name</h2>
+                        <h2>@item.Assignment.Status</h2>
+                        @*<a class="btn btn-default btn-xs" asp-action="Complete" asp-controller="Assignment" asp-route-id="@item.Assignment.AssignmentId" data-modal="complete">Complete</a>*@
+                        <a class="btn btn-default" asp-action="Assign" asp-controller="Assignment" asp-route-id="@item.Assignment.AssignmentId" data-modal="complete">Manage</a>
+
+                    }
+                </div>
+                <table class="table table-inverse table-hover">
+                    <thead class="bg-primary">
+                        <tr>
+                            <th></th>
+                            <th>Completed By</th>
+                            <th>Email</th>
+                            <th>Date Of Assignment</th>
+                            <th>Date Of Completion</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model.OrderByDescending(i => i.UserAssignment.Status))
+            {
+                            @if (item.UserAssignment.Status == Status.Rejected)
+                {
+                                <tr class="pointer danger">
+                                    <td></td>
+                                    <td>(REJECTED) @item.Employee.FullName</td>
+                                    <td>@item.Employee.Email</td>
+                                    <td>@item.UserAssignment.DateOfAssignment.ToLongDateString()</td>
+                                    <td class="danger">HAS BEEN REJECTED!</td>
+                                    <td>
+                                    </td>
+                                </tr>
+
+                            }
+                             else if (item.UserAssignment.Status == Status.Circulating && item.UserAssignment.Status == Status.Rejected)
+                {
+                                <tr class="pointer success">
+                                    <td></td>
+                                    <td>(Assigned) @item.Employee.FullName</td>
+                                    <td>@item.Employee.Email</td>
+                                    <td>@item.UserAssignment.DateOfAssignment.ToLongDateString()</td>
+                                    <td>STILL NEED COMPLETED!</td>
+                                    <td>
+                                        @*<a class="btn btn-default btn-xs" asp-action="Complete" asp-controller="Assignment" asp-route-id="@item.Assignment.AssignmentId" data-modal="complete">Complete</a>*@
+                                    </td>
+                                </tr>
+
+                            }
+                            else
+                            {
+                                <tr class="pointer">
+                                    <td></td>
+                                    <td>@item.Employee.FullName</td>
+                                    <td>@item.Employee.Email</td>
+                                    <td>@item.UserAssignment.DateOfAssignment.ToLongDateString()</td>
+                                    <td>@item.UserAssignment.DateOfCompletion.ToLongDateString()</td>
+                                    <td></td>
+                                </tr>
+                            }
+
+                        }
+
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            @await Component.InvokeAsync("EmployeeWidget")
+        </div>
+    </div>
+</div>

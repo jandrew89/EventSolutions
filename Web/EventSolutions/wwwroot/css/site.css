@@ -1,0 +1,400 @@
+﻿
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+
+/* GIGS*/
+
+.gigs > li {
+    position: relative;
+    margin-bottom: 30px;
+
+}
+
+.gigs {
+    list-style: none
+}
+
+.gigs > li .date {
+    background: red;
+    color: white;
+    text-align: center;
+    width:60px;
+    border-radius: 8px;
+}
+
+.gigs > li .actions{
+    font-size: 15px;
+    display: none;
+}
+
+.gigs > li:hover .actions{
+    display:block;
+}
+
+.gigs > li .date .day {
+    background: #f7f7f7;
+    color: #333;
+    font-size: 20px;
+    padding-left: 12px 12px;
+}
+
+.gigs > li .date .month {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 6px;
+}
+
+.gigs > li .details .artist {
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    padding-bottom: 10px;
+}
+
+.gigs > li .details .genre {
+    font-size: 18px;
+    padding-right: 40px;
+}
+.gigs > li .details{
+    position: absolute;
+    top:0;
+    left: 70px;
+    padding-bottom: 5px;
+    
+}
+
+
+.btn-progress {
+    width: 100%;
+    border-bottom: 2px solid #18bc9c;
+    margin: 0;
+    color: #2c3e50;
+    
+}
+
+
+.side{
+    padding-right:15px;
+    margin-top:5px;
+
+}
+
+.body-gradient {
+    background: url(../img/bg-pattern.png),linear-gradient(to right, #3B3D4A, #2c3e50);
+    background-image: url('../images/bg-gradient.png'), linear-gradient(to right, #3B3D4A, #2c3e50);
+    background-position-x: initial, initial;
+    background-position-y: initial, initial;
+    background-size: initial, initial;
+    background-repeat-x: initial, initial;
+    background-repeat-y: initial, initial;
+    background-attachment: initial, initial;
+    background-origin: initial, initial;
+    background-clip: initial, initial;
+    background-color: initial;
+    height: auto;
+}
+
+.home-Overlay {
+    background-image: url('../images/pattern.png');
+    background-color: rgba(44, 62, 80, 0.3);
+    background-repeat: repeat;
+    left: 0;
+    position: absolute;
+    top: 0;
+    height:auto;
+    width: 100%;
+    z-index: 0;
+}
+
+.lpStart{
+    font-family: "Maven Pro", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 60px;
+   
+    font-style: normal;
+    text-transform: none;
+    margin: 30px 0;
+}
+
+
+
+.lpLower{
+    font-family: "Open Sans Condensed", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    text-transform: none;
+    margin: 30px 0;
+}
+.intro{
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    text-align: center;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+    -o-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+    padding: 0 0;
+}
+#preloader {
+    background-image: url('../images/cover.jpg');
+
+    /*background-color: #3A6073;*/
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+}
+
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+.textarea{
+    /*max-width: 280px;*/
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* buttons and links extension to use brackets: [ click me ] */
+.btn-bracketed::before {
+    display:inline-block;
+    content: "[";
+    padding-right: 0.5em;
+}
+.btn-bracketed::after {
+    display:inline-block;
+    content: "]";
+    padding-left: 0.5em;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+  /* Hide captions */
+  .carousel-caption {
+    display: none
+  }
+}
+
+
+.middlePage {
+    padding-top: 20em;
+	width: 800px;
+    height: 100%;
+    /*position: absolute;*/
+    /*top:25000px;*/
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    background-color:transparent;
+    margin: auto;
+    font-family: 'Raleway', sans-serif;
+}
+.logo{
+    color:#CCC;
+}
+.spacing {
+	padding-top:7px;
+	padding-bottom:7px;
+}
+
+.loginbody {
+    /*width:100px;
+	height:100px;*/
+  background: -webkit-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* W3C */
+font-family: 'Raleway', sans-serif;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.notifications {
+    position: relative;
+}
+
+
+.notifications .badge{
+    position: absolute;
+    top: 3px;
+    right: -1px;
+    background: red;
+}
+
+/*FILE UPLOAD*/
+fieldset
+{
+	display: flex;
+	-webkit-margin-start: 2px;
+	-webkit-margin-end: 2px;
+	-webkit-padding-before: 0.35em;
+	-webkit-padding-start: 0.75em;
+	-webkit-padding-end: 0.75em;
+	-webkit-padding-after: 0.625em;
+	border: 2px groove threedface;
+	border-image-source: initial;
+	border-image-slice: initial;
+	border-image-width: initial;
+	border-image-outset: initial;
+	border-image-repeat: initial;
+	min-width: -webkit-min-content;
+	border-color: #f3f4f5;
+}
+
+legend
+{
+	display: block;
+	padding-left: 2px;
+	padding-right: 2px;
+	border: none;
+	width: auto;
+	color: #3c8dbc;
+}
+#FormContent{
+    margin-left: 20px;
+    margin-right: auto;
+    width: 95%;
+}
+.fileinput-button 
+ { 
+ 	position: relative; 
+ 	overflow: hidden; 
+ } 
+ 
+
+ 	.fileinput-button input 
+ 	{ 
+ 		position: absolute; 
+ 		top: 0; 
+ 		right: 0; 
+ 		margin: 0; 
+ 		opacity: 0; 
+ 		filter: alpha(opacity=0); 
+ 		transform: translate(-300px, 0) scale(4); 
+ 		font-size: 23px; 
+ 		direction: ltr; 
+ 		cursor: pointer; 
+ 	} 
+ 
+
+ .fileupload-buttonbar .btn, 
+ .fileupload-buttonbar .toggle 
+ { 
+ 	margin-bottom: 5px; 
+ } 
+ 
+
+ .fileupload-buttonbar .btn, 
+ .fileupload-buttonbar .toggle 
+ { 
+ 	margin-bottom: 5px; 
+ } 
+ 
+
+ .info 
+ { 
+ 	font-family: arial; 
+ 	font-size: 15px; 
+ 	font-weight: bold; 
+ 	margin-bottom: 8px; 
+ 	width: 95%; 
+ } 
+ 
+ 
+ .InfoContainer 
+ { 
+ 	background-color: #F0F0F0; 
+ 	width: 95%; 
+ } 
+ 
+
+ .CustomProgress 
+ { 
+ 	width: 95%; 
+ 	margin-top: 25px; 
+ 	margin-bottom: 25px; 
+ } 
+ 
+ 
+#Container 
+{ 
+	/*width: 30%;*/ 
+	margin-left: 2.5%; 
+	margin-right: 2%; 
+	width: 95%; 
+	margin-bottom: 2%; 
+	margin-top: 2%; 
+ 	overflow: auto!important; 
+ 	height: 500px; 
+ } 
+ 
+ 
+ .Error 
+ { 
+ 	color: red; 
+ 	font-weight: bold; 
+ } 
+ 
+
+ #Main 
+ { 
+ 	margin-left: auto; 
+ 	margin-right: auto; 
+ 	width: 90%; 
+ 	/*background-color: #b0e0e6;*/ 
+ } 
+ 
+
+ .thumb 
+ { 
+ 	height: 100px; 
+ 	border: 1px solid #000; 
+ 	margin: 1px 5px 10px 2px; 
+ } 
+ 
+
+ .drop_zone 
+ { 
+ 	border: 2px dashed #bbb; 
+ 	border-radius: 5px; 
+ 	color: #bbb; 
+ 	padding: 25px; 
+ 	text-align: center; 
+ 	margin-top: 10px; 
+ 	width: 95%; 
+ } 
+ 
+
+ .hover 
+ { 
+ 	border: 2px solid #000; 
+ 	border-radius: 5px; 
+ 	color: #bbb; 
+ 	padding: 25px; 
+ 	text-align: center; 
+ 	margin-top: 10px; 
+ 	width: 95%; 
+ } 
+ 
+
+ #close_btn 
+ { 
+ 	background: url("../Images/close_btn.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0); 
+ 	border: 0 none; 
+ 	float: right; 
+ 	height: 31px; 
+ 	width: 40px; 
+ } 
+
+

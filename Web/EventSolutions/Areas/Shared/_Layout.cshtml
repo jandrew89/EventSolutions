@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Solutions</title>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-ui/jquery-ui.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/js/underscore-min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/Moment.js"></script>
+    <script src="~/js/bootbox.min.js"></script>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    <link href="~/css/bootstrapYeti.css" rel="stylesheet" />
+    <link href="~/css/animate.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/theme.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Fira+Sans|Maven+Pro|Open+Sans+Condensed:300|Quattrocento+Sans|Raleway" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <link href="~/lib/jquery-ui/themes/base/all.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div aria-expanded="true" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Event Solutions</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li><a asp-area="Profile" asp-controller="User" asp-action="Index">Home</a></li>*@
+                    <li><a class="fa fa-tasks fa-lg" asp-controller="Assignment" asp-action="Index"> Assignments</a></li>
+                    <li><a class="fa fa-users fa-lg" asp-controller="Customer" asp-action="Index"> Customers</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="notifications">
+                            <i class="fa fa-calendar fa-lg" aria-hidden="true"></i>
+                            <span class="badge js-userassignment-count hide"></span>
+                        </a>
+                    </li>
+
+                    <li><a class="fa fa-compress fa-lg" asp-controller="Home" asp-action="LeaveFeedback"> Contact</a></li>
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <li><a class="fa fa-sign-in fa-lg" asp-controller="Home" asp-action="SignIn"> Sign In</a></li>
+                    }
+                    <li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            @Html.ActionLink($"{User.Identity.Name}, Log Out", "SignOut", "Home");
+                        }
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    @*<div style="padding-top:3em">
+        <nav class="navbar navbar-inverse sidebar" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home<i class="fa fa-header pull-right showopacity fa-lg" aria-hidden="true"></i></a></li>
+                        <li><a asp-controller="Customer" asp-action="Index">Customers<i class="fa fa-users pull-right showopacity fa-lg" aria-hidden="true"></i></a></li>
+                        <li><a asp-controller="Assignment" asp-action="Index">Assignments<i class="fa fa-tasks pull-right showopacity fa-lg" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>*@
+        <div>
+            @RenderBody()
+
+
+        </div>
+
+    <environment names="Development">
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("scripts", required: false)
+    <script type="text/x-template" id="userassignment-template">
+        <ul class="userassignments">
+            <%
+            _.each(userassignments, function(userassignment){
+            if (userassignment.isCompleted == false) { %>
+                <li class="pointer">
+                    <span class="highlight"><%= userassignment.employee.firstName %> <%= userassignment.employee.lastName %></span> was assigned <span class="highlight"><%= userassignment.assignment.name %></span> at <span class="highlight"><%= moment(userassignment.dateOfAssignment).format("ddd, ha") %></span>.
+
+                </li>
+            <% }
+
+            else if (userassignment.isCompleted == true && userassignment.reassigned == false) { %>
+            <li class="pointer">
+                <span class="highlight"><%= userassignment.assignment.name %></span> was completed on <span class="highlight"><%= moment(userassignment.dateOfAssignment).format("ddd, ha") %></span> by <span class="highlight"><%= userassignment.employee.firstName %> <%= userassignment.employee.lastName %></span>.
+            </li>
+            <%}
+            })
+            %>
+        </ul>
+    </script>
+    <script>
+        $(document).ready(function () {
+            $.getJSON("/api/userassignments/intransit", function (userassignments) {
+                if (userassignments.length == 0)
+                    return;
+                $(".js-userassignment-count")
+                    .text(userassignments.length)
+                    .removeClass("hide")
+                    .addClass("animated bounceInDown");
+                $(".notifications").popover({
+                    html: true,
+                    title: "User Assignments",
+                    content: function () {
+                        var compiled = _.template($("#userassignment-template").html());
+                        return compiled({ userassignments: userassignments });
+                    },
+                    placement: "bottom",
+                    template: '<div class="popover popover-userassignments" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+                }).on("shown.bs.popover", function () {
+                    $(".js-userassignment-count")
+                        .text("")
+                        .addClass("hide");
+
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

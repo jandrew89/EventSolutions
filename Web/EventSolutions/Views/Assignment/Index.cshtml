@@ -1,0 +1,68 @@
+﻿@model IEnumerable<CompleteTaskViewModel>
+
+
+<div class="container-fluid" style="padding-top:3em;padding-left:3em">
+    <div class="rptitleleft">Assignments</div>
+
+
+    <div id="assignModal" class="modal fade in">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="assignModalContent"></div>
+            </div>
+        </div>
+    </div>
+    <div id="editModal" class="modal fade in">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="editModalContent"></div>
+            </div>
+        </div>
+    </div>
+    <div id="completeModal" class="modal fade in">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="completeModalContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <a asp-action="CreateTask" asp-controller="Assignment" class="btn btn-default btn-sm">Create Task</a>
+
+
+    <div class="panel-group" id="accordion">
+        @foreach (var item in Model.OrderBy(m => m.UserAssignment.DateOfAssignment))
+        {
+            <div class="panel @(item.UserAssignment.IsCompleted == true)? panel-default : panel-alert">
+                @*HEADER*@
+                <div class="panel-heading">
+                    <div class="row pointer">
+                        <div data-toggle="collapse" data-parent="#accordion" href="#@item.Assignment.AssignmentId" class="col col-xs-12">
+                            <div class="panel-title">
+
+                                <h4 class="pointer"><strong>@item.Assignment.Name</strong></h4>
+                                <a asp-action="Assign" asp-controller="Assignment" asp-route-id="@item.Assignment.AssignmentId" data-modal="assigner" class="btn btn-default btn-sm">Manage</a>
+                                <a asp-action="Editor" asp-controller="Assignment" asp-route-id="@item.Assignment.AssignmentId" data-modal="editor" class="btn btn-default btn-sm">Edit</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                @*BODY*@
+                <div class="panel-collapse collapse" id="@item.Assignment.AssignmentId">
+                    <div class="panel-body">
+                        <h3>Task Description:</h3>
+
+                        <h4>@item.Assignment.Description</h4>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+    </div>
+
+
+
+</div>

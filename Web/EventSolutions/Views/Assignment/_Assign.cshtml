@@ -1,0 +1,34 @@
+﻿@model AssignmentViewModel
+
+
+<div class="black-modal-header" style="border-radius: 0px !important;">
+    <button type="button" class="close" data-dismiss="modal">
+        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+    </button>
+    <h4 class="black-modal-title" id="myModelLabel">Task Assigner</h4>
+    <p>Assign the task to the next employee: <strong>@Model.Assignment.Name</strong></p>
+</div>
+<div class="black-modal-body" style="border-radius: 0px !important;">
+    <form method="post" asp-action="Assign" asp-controller="Assignment">
+        <div class="form-group">
+            <select asp-for="@Model.EmployeeId" asp-items="@Model.Employees" class="black-form-control"></select>
+
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-6">
+                    <select asp-for="@Model.Priority" asp-items="Html.GetEnumSelectList<Priority>()" class="black-form-control"></select>
+                </div>
+                <div class="col-sm-6">
+                    <select asp-for="@Model.Status" asp-items="Html.GetEnumSelectList<Status>()" class="black-form-control"></select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="sr-only"></label>
+            <textarea type="text" asp-for="@Model.Comments" class="black-form-control" autofocus placeholder="Additional comments...." />
+        </div>
+        <button type="submit" class="btn" asp-for="@Model.Assignment.AssignmentId">Assign</button>
+    </form>
+</div>
+

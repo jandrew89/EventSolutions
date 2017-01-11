@@ -1,0 +1,21 @@
+﻿.popover-userassignments .popover-content{
+    padding: 0;
+}
+
+.userassignments {
+    list-style: none;
+    padding-left: 0;
+    width:250px;
+    font-size: large;
+}
+.userassignments > li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+   
+.userassignments > li:last-child{
+    border-bottom: none;
+}
+.highlight {
+    font-weight: bolder;
+}

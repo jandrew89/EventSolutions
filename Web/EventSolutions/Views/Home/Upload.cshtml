@@ -1,0 +1,14 @@
+﻿<div style="padding-top:5em" id="Container">
+    <fieldset>
+        <legend>Upload:</legend>
+        <div id="FormContent">
+            <form method="post" asp-action="Upload" asp-controller="Home" enctype="multipart/form-data">
+                <div class="btn-group">
+                        <input type="file" class="btn btn-default" style="margin-right:10px;margin-bottom:10px" name="files" multiple />
+             
+                        <input type="submit" class="btn btn-success" value="Upload" />
+                </div>
+            </form>
+        </div>
+    </fieldset>
+</div>

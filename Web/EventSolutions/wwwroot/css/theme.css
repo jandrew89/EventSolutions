@@ -1,0 +1,205 @@
+﻿
+/* Transparant Background*/
+.main-container {
+    background: #d53369; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #d53369 , #cbad6d); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #d53369 , #cbad6d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width:100%;
+    height:900px;
+}
+
+.soft-container {
+    background: #99cee2; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #99cee2 , #c1c6c6); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #99cee2 , #c1c6c6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width:100%;
+    height:900px;
+}
+
+
+
+/* Order Page*/
+
+.rpmain {
+    margin-top: 70px;
+}
+
+hr {
+    width: 10%;
+	color: #fff;
+}
+
+
+.rpmain-login {
+     	background-color: #e4e4e4;
+    /* shadows and rounded borders */
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.rpmain-center{
+    	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 600px;
+    padding: 40px 40px;
+}
+.rptitle {
+    font-size: 50px;
+	font-family: 'Passion One', cursive; 
+	font-weight: 400; 
+}
+.rptitlecenter {
+    font-size: 50px;
+	font-family: 'Passion One', cursive; 
+	font-weight: 400; 
+    text-align:center;
+}
+.rptitleleft {
+    font-size: 50px;
+	font-family: 'Passion One', cursive; 
+	font-weight: 400; 
+    text-align:left;
+}
+
+
+/* Search with filer*/
+.clickable{
+    cursor: pointer;   
+}
+.rplogin-button{
+	margin-top: 5px;
+}
+
+.panel-heading span {
+    margin-top: -20px;
+	font-size: 15px;
+}
+
+
+
+footer {
+    background: url(../img/bg-pattern.png),linear-gradient(to right, #3B3D4A, #2c3e50);
+    background-image: url('../images/bg-gradient.png'), linear-gradient(to right, #3B3D4A, #2c3e50);
+    background-position-x: initial, initial;
+    background-position-y: initial, initial;
+    background-size: initial, initial;
+    background-repeat-x: initial, initial;
+    background-repeat-y: initial, initial;
+    background-attachment: initial, initial;
+    background-origin: initial, initial;
+    background-clip: initial, initial;
+    background-color: initial;
+    color: white;
+    min-height: 200px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* Form Module */
+.form-module {
+  position: relative;
+  background:  rgba(255, 255, 255, 0.37);
+  max-width: 363px;
+  width: 100%;
+  border-top: 5px solid #2c3e50;
+  margin: 10em auto;
+   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.form-module .toggle {
+  cursor: pointer;
+  position: absolute;
+  top: -0;
+  right: -0;
+  background: #2c3e50;
+  width: 30px;
+  height: 30px;
+  margin: 0px 0 0;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 30px;
+  text-align: center;
+}
+.form-module .toggle .tooltip {
+  position: absolute;
+  top: 5px;
+  right: -65px;
+  display: block;
+  background: rgba(0, 0, 0, 0.6);
+  width: auto;
+  padding: 5px;
+  font-size: 10px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.form-module .toggle .tooltip:before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: -5px;
+  display: block;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid rgba(0, 0, 0, 0.6);
+}
+.form-module .form {
+  display: none;
+  padding: 40px;
+}
+.form-module .form:nth-child(2) {
+  display: block;
+}
+.form-module h2 {
+  margin: 0 0 20px;
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+}
+.form-module input {
+  outline: none;
+  display: block;
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  margin: 0 0 20px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  font-wieght: 400;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.form-module input:focus {
+  border: 1px solid #2c3e50;
+  color: #333333;
+}
+.form-module button {
+  cursor: pointer;
+  background: #2c3e50;
+  width: 100%;
+  border: 0;
+  padding: 10px 15px;
+  color: #ffffff;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.form-module button:hover {
+  background: #2c3e50;
+}
+.form-module .cta {
+  background: #f2f2f2;
+  width: 100%;
+  padding: 15px 40px;
+  box-sizing: border-box;
+  color: #666666;
+  font-size: 12px;
+  text-align: center;
+}
+.form-module .cta a {
+  color: #333333;
+  text-decoration: none;
+}

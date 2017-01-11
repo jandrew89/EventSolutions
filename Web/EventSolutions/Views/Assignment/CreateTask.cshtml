@@ -1,0 +1,141 @@
+﻿@model CompleteTaskViewModel
+<div class="container-fluid" style="padding-top:5em;padding-left:2em">
+    <div class="col-md-3">
+        @Html.Partial("_Navigation")
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="container">
+            <div class="row rpmain">
+                <div class="panel-heading">
+                    <div class="rptitlecenter">Create Task</div>
+                    <hr />
+                </div>
+            </div>
+            <div class="rpmain-login rpmain-center">
+                <form class="form-horizontal" method="post" asp-action="CreateTask" asp-controller="Assignment">
+                    <div class="form-group">
+                        <label asp-for="@Model.Assignment.Name" class="col-lg-2 control-label"></label>
+                        <div class="col-lg-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" autofocus asp-for="@Model.Assignment.Name" placeholder="Name..">
+                                <span asp-validation-for="@Model.Assignment.Name" style="color:red"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Assignment.Description" class="col-lg-2 control-label"></label>
+                        <div class="col-lg-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                                <textarea type="text" class="form-control" rows="3" asp-for="@Model.Assignment.Description" placeholder="More Details.."></textarea>
+                                <span asp-validation-for="@Model.Assignment.Description"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <label asp-for="@Model.Assignment.Requests" class="col-lg-2 control-label"></label>
+                        <div class="col-lg-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user-secret fa" aria-hidden="true"></i></span>
+                                <textarea type="text" class="form-control" rows="3" asp-for="@Model.Assignment.Requests" placeholder="Info for employees.."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Need By...</label>
+                        <div class="col-lg-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
+                                @Html.EditorFor(model => model.Assignment.CompletedDate, "DateWithPicker")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Priority</label>
+                        <div class="col-lg-4">
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButtonFor(m => m.UserAssignment.Priority, "NA")
+                                    N/A
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButtonFor(m => m.UserAssignment.Priority, "Low")
+                                    Low
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButtonFor(m => m.UserAssignment.Priority, "Medium")
+                                    Medium
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButtonFor(m => m.UserAssignment.Priority, "High")
+                                    High
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButtonFor(m => m.UserAssignment.Priority, "Emergency")
+                                    Emergency
+                                </label>
+                            </div>
+                        </div>
+                        <label class="col-lg-2 control-label">Assignment</label>
+                        <div class="col-lg-4">
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButtonFor(m => m.UserAssignment.Employee.Role, "Manager")
+                                    Management
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButtonFor(m => m.UserAssignment.Employee.Role, "Client")
+                                    Client
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButtonFor(m => m.UserAssignment.Employee.Role, "Tech")
+                                    Technician
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButtonFor(m => m.UserAssignment.Employee.Role, "Salesman")
+                                    Sales/Marketing
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButtonFor(m => m.UserAssignment.Employee.Role, "Temp")
+                                    Internship/Temp
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButtonFor(m => m.UserAssignment.Employee.Role, "Engineer")
+                                    Engineering
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary btn-lg btn-block rplogin-button" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,96 @@
+{
+  "version": 2,
+  "exports": {
+    "Event.Core/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6",
+      "compile": {
+        "bin/Debug/Event.Core.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/Event.Core.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/Event.Core.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "Event.Data/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6",
+      "compile": {
+        "bin/Debug/Event.Data.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/Event.Data.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/Event.Data.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "Events.Repository/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6",
+      "compile": {
+        "bin/Debug/Shows.Repository.dll": {}
+      },
+      "runtime": {
+        "../../packages/EntityFramework.6.1.3/lib/net45/EntityFramework.SqlServer.dll": {},
+        "../../packages/EntityFramework.6.1.3/lib/net45/EntityFramework.dll": {},
+        "bin/Debug/Shows.Repository.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/Shows.Repository.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "Assignment.Repository/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6",
+      "compile": {
+        "bin/Debug/Task.Repository.dll": {}
+      },
+      "runtime": {
+        "../../packages/EntityFramework.6.1.3/lib/net45/EntityFramework.SqlServer.dll": {},
+        "../../packages/EntityFramework.6.1.3/lib/net45/EntityFramework.dll": {},
+        "bin/Debug/Task.Repository.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/Task.Repository.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "User.Repository/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6",
+      "compile": {
+        "bin/Debug/User.Repository.dll": {}
+      },
+      "runtime": {
+        "../../packages/EntityFramework.6.1.3/lib/net45/EntityFramework.SqlServer.dll": {},
+        "../../packages/EntityFramework.6.1.3/lib/net45/EntityFramework.dll": {},
+        "bin/Debug/User.Repository.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/User.Repository.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}
